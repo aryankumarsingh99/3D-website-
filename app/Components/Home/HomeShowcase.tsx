@@ -2,6 +2,7 @@
 
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Environment, OrbitControls, Sparkles } from "@react-three/drei";
+import type { Group } from "three";
 import { useRef } from "react";
 const navy = "#17232b";
 const wood = "#40545b";
