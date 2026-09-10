@@ -45,7 +45,7 @@ export default function Navbar() {
 	}, [pathname]);
 
 	return (
-		<header className={`fixed inset-x-0 top-0 z-20 flex items-center justify-between px-[4.5vw] py-7 text-[#204C72] transition-colors duration-300 max-[700px]:py-4 ${hasScrolled ? "bg-[#204C72]" : "bg-transparent"}`}>
+		<header className={`fixed inset-x-0 top-0 z-20 flex items-center justify-between px-[4.5vw] py-4 text-[#204C72] transition-colors duration-300 max-[700px]:py-2 ${hasScrolled ? "bg-[#204C72]" : "bg-transparent"}`}>
 			<Link className="ml-[4.2vw] text-[30px] font-bold tracking-[-0.08em] max-[700px]:text-[27px]" href="/#top" aria-label="DraftBIM Services home">
 				<Image src="/logo.png" alt="Draft BIM logo" width={60} height={60} className="rounded-full" />
 			</Link>
