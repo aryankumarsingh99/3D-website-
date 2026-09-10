@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+import Image from "next/image";
 const footerLinks = [
 	{ label: "Home", href: "/#top" },
 	{ label: "Services", href: "/#services" },
@@ -21,8 +21,8 @@ export default function Footer() {
 			<div className="site-footer-gridline" aria-hidden="true" />
 			<div className="site-footer-inner">
 				<div className="site-footer-brand">
-					<Link className="site-footer-logo" href="/#top" aria-label="DraftBIM Services home">
-						DraftBIM<span>.</span>
+					<Link className="ml-[4.2vw] text-[30px] font-bold tracking-[-0.08em] max-[700px]:text-[27px]" href="/#top" aria-label="DraftBIM Services home">
+						<Image src="/logo.png" alt="Draft BIM logo" width={60} height={60} className="rounded-full" />
 					</Link>
 					<p>Digital building models and coordinated documentation for clearer construction.</p>
 				</div>
@@ -42,11 +42,14 @@ export default function Footer() {
 				</nav>
 
 				<div className="site-footer-contact">
-					<span className="site-footer-label">Start a conversation</span>
-					<a href="mailto:hello@draftbim.com">hello@draftbim.com</a>
-					<a href="tel:+919999999999">+91 99999 99999</a>
-					<span>Odisha, India</span>
-					<span>Architecture + Construction</span>
+					<span className="site-footer-label">Contact</span>
+					<a href="mailto:Draftbim@gmail.com">Draftbim@gmail.com</a>
+					<a href="tel:+918328992742">+91 83289 92742</a>
+					<p>Er. Vijay Kumar Achary</p>
+					<p>Founder Draft BIM.</p>
+					<p>Associate Member India-Reg No (AM3119915)</p>
+					<p>Director Of Town Planning - DTP EMP No. RTP/DTP(C.ER)-632/2024</p>
+					<p>Koraput, Odisha, India</p>
 					<div className="site-footer-socials" aria-label="Social links">
 						<a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
 						<a href="https://www.instagram.com" target="_blank" rel="noreferrer">Instagram</a>

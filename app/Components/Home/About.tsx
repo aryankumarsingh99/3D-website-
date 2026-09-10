@@ -11,7 +11,7 @@ export default function About() {
       <div className="about-inner">
         <div className="about-visual" aria-label="Abstract coordinated building drawing" role="img">
           <div className="about-visual-header">
-            <span>DraftBIM / Method</span>
+            <span>Draft BIM / Method</span>
             <span>Drawing 01 / 03</span>
           </div>
           <div className="about-drawing">
@@ -30,13 +30,10 @@ export default function About() {
         </div>
 
         <div className="about-copy">
-          <p className="about-kicker"><span>05</span> About DraftBIM</p>
-          <h2>Draw the<br /><em>way forward.</em></h2>
+          <p className="about-kicker"><span>02</span> About</p>
+          <h2>Draft<br /><em>BIM</em></h2>
           <p className="about-lead">
-            DraftBIM Services is a digital building partner for teams who care about getting the details right.
-          </p>
-          <p className="about-body">
-            We turn architectural intent into coordinated information that can be understood, reviewed, and built. Our approach is calm, exact, and collaborative from the first model to the final sheet.
+            At Draft BIM, our mission is to provide exceptional design consultancy. We focus on making architectural dreams a reality for every homeowner. Trust us for your design needs.
           </p>
           <div className="about-principles">
             {principles.map(([number, title, description]) => (

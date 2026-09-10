@@ -1,0 +1,49 @@
+.hero-shell { background: #F7F9FA; min-height: 100svh; overflow: hidden; position: relative; }
+.hero-noise { background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E"); inset: 0; opacity: 0.13; pointer-events: none; position: absolute; z-index: 5; }
+.hero-nav, .hero-footer { align-items: center; display: flex; justify-content: space-between; left: 0; padding: 31px 4.5vw; position: absolute; right: 0; z-index: 4; }
+.hero-nav { top: 0; }
+.hero-footer { bottom: 0; color: #9aabb0; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; }
+.brand { color: #f5eee3; font-size: 19px; font-weight: 700; letter-spacing: -0.08em; text-decoration: none; }
+.brand-dot { color: #204C72; }
+.nav-note { color: #9aabb0; font-size: 10px; letter-spacing: 0.18em; margin: 0 0 0 auto; text-transform: uppercase; }
+.menu-button { background: none; border: 0; cursor: pointer; display: grid; gap: 6px; padding: 8px 0 8px 20px; width: 48px; }
+.menu-button span { background: #f5eee3; display: block; height: 1px; transition: transform 250ms ease; width: 26px; }
+.menu-button span:last-child { transform: translateX(8px); }
+.menu-button:hover span:first-child { transform: translateX(8px); }
+.menu-button:hover span:last-child { transform: translateX(0); }
+.hero-content { min-height: 105svh; position: relative; }
+.hero-copy { left: 9vw; max-width: 430px; position: absolute; top: 16%; z-index: 2; }
+.eyebrow { color: #204C72; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; }
+.eyebrow span { color: #9aabb0; margin-right: 22px; }
+h1 { font-size: clamp(52px, 7vw, 110px); font-weight: 400; letter-spacing: -0.075em; line-height: 0.86; margin: 0; }
+h1 em { color: #204C72; font-family: Georgia, serif; font-size: 0.93em; font-weight: 400; letter-spacing: -0.09em; }
+.hero-description { color: #3e4041; font-size: 13px; line-height: 1.65; margin: 35px 0 20px; max-width: 290px; }
+.service-list { display: flex; flex-wrap: wrap; gap: 7px; margin: 0 0 28px; max-width: 340px; }
+.service-list span { border: 1px solid #40545b; color: #c5d0cd; font-size: 9px; letter-spacing: 0.08em; padding: 7px 8px; text-transform: uppercase; }
+.explore-button { align-items: center; background: #204C72; border: 1px solid #204C72; color: #f5eee3; cursor: pointer; display: flex; font-size: 10px; gap: 34px; letter-spacing: 0.13em; padding: 15px 17px; text-transform: uppercase; transition: background 220ms ease, color 220ms ease; }
+.explore-button:hover { background: transparent; color: #204C72; }
+.button-arrow { font-size: 15px; line-height: 8px; }
+.scene-wrap { height: 76vh; left: 39%; min-height: 520px; position: absolute; top: 12%; width: 57%; }
+.scene-wrap canvas { cursor: grab; height: 100% !important; }
+.scene-wrap canvas:active { cursor: grabbing; }
+.scene-label { color: #9aabb0; font-size: 9px; letter-spacing: 0.16em; position: absolute; text-transform: uppercase; }
+.scene-label-top { right: 11%; top: 17%; }
+.scene-label-bottom { bottom: 3%; left: 2%; }
+.scene-label-bottom span { color: #204C72; margin: 0 7px; }
+.hero-index { bottom: 16%; color: #61747b; font-size: 11px; left: 4.5vw; position: absolute; writing-mode: vertical-rl; }
+.footer-line { background: #40545b; height: 1px; margin: 0 18px; width: 80px; }
+
+@media (max-width: 700px) {
+  .hero-nav, .hero-footer { padding: 24px 7vw; }
+  .nav-note { display: none; }
+  .hero-content { min-height: 125svh; }
+  .hero-copy { left: 7vw; padding-top: 17%; position: relative; top: auto; }
+  h1 { font-size: clamp(55px, 16vw, 88px); }
+  .hero-description { margin-top: 25px; }
+  .scene-wrap { height: 44vh; left: auto; margin: 7vh auto 0; min-height: 320px; position: relative; top: auto; width: 100%; }
+  .scene-label-top { right: 11%; top: 12%; }
+  .scene-label-bottom { bottom: 2%; left: 3%; }
+  .hero-index { display: none; }
+  .hero-footer { font-size: 8px; }
+  .footer-line { margin: 0 10px; width: 35px; }
+}

@@ -1,0 +1,25 @@
+.showcase-section { align-items: center; color: #204C72; display: grid; gap: 4vw; grid-template-areas: "model content"; grid-template-columns: minmax(0, 1.65fr) minmax(250px, .72fr); min-height: 92svh; overflow: hidden; padding: 7vw 8vw; position: relative; width: 100%; background: #F7F9FA; }
+.showcase-background { background-image: linear-gradient(rgba(32,76,114,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(32,76,114,.07) 1px, transparent 1px), radial-gradient(circle at 18% 80%, rgba(121,198,208,.1), transparent 28%); background-size: 72px 72px, 72px 72px, 100% 100%; inset: 0; opacity: .8; pointer-events: none; position: absolute; }
+.showcase-background::before, .showcase-background::after { border: 1px solid rgba(32,76,114,.12); content: ""; position: absolute; transform: rotate(-18deg); }
+.showcase-background::before { height: 130%; right: 22%; top: -15%; width: 28%; }
+.showcase-background::after { border-color: rgba(32,76,114,.18); height: 75%; right: 5%; top: 15%; width: 18%; }
+.showcase-heading { grid-area: content; max-width: 360px; position: relative; z-index: 2; }
+.showcase-section .section-kicker { color: #204C72; font-size: 10px; letter-spacing: .2em; margin: 0 0 25px; text-transform: uppercase; }
+.showcase-section .section-kicker span { color: #9aabb0; margin-right: 20px; }
+.showcase-heading h2 { color: #204C72; font-size: clamp(45px, 5.4vw, 82px); font-weight: 400; letter-spacing: -.075em; line-height: .88; margin: 0; }
+.showcase-heading h2 em { color: #204C72; font-family: Georgia, serif; font-size: .92em; font-weight: 400; opacity: 0.65; }
+.showcase-heading > p:not(.section-kicker) { color: #3e4041; font-size: 13px; line-height: 1.7; margin: 32px 0 30px; max-width: 275px; }
+.showcase-stat { border-top: 1px solid rgba(32,76,114,.2); display: grid; gap: 7px; padding-top: 15px; }
+.showcase-stat strong, .showcase-stat span { font-size: 9px; letter-spacing: .13em; text-transform: uppercase; }
+.showcase-stat strong { color: #204C72; }
+.showcase-stat span { color: #9aabb0; }
+.showcase-canvas { grid-area: model; height: min(74vh, 720px); justify-self: start; min-height: 510px; overflow: hidden; position: relative; width: 84%; z-index: 1; }
+.showcase-canvas canvas { cursor: grab; height: 100% !important; width: 100% !important; }
+.showcase-canvas canvas:active { cursor: grabbing; }
+.showcase-caption { bottom: 18px; color: #9aabb0; font-size: 9px; left: 22px; letter-spacing: .14em; position: absolute; text-transform: uppercase; }
+
+@media (max-width: 800px) {
+  .showcase-section { display: block; min-height: auto; padding: 14vw 7vw 16vw; }
+  .showcase-heading { margin-bottom: 10vw; max-width: 430px; }
+  .showcase-canvas { height: 64vh; min-height: 410px; width: 100%; }
+}

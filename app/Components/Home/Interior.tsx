@@ -3,12 +3,15 @@
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Environment, OrbitControls, Sparkles } from "@react-three/drei";
 import type { Group } from "three";
-import { useRef } from "react";
-const navy = "#17232b";
-const wood = "#40545b";
-const lightWood = "#e08f62";
-const stone = "#d8e0dc";
-const steel = "#9da9a0";
+import { Suspense, useRef } from "react";
+import { useWebGL } from "./useWebGL";
+
+
+const navy = "#204C72";
+const wood = "#8AA5BC";
+const lightWood = "#D6E6EF";
+const stone = "#F7F9FA";
+const steel = "#9DBACD";
 
 function Box({
   position,
@@ -54,9 +57,9 @@ function CabinetWall() {
       {shelves.map((x) => <Box key={x} position={[x, 3.15, -1.58]} scale={[0.06, 0.7, 0.08]} color={lightWood} />)}
       <Box position={[-2.62, 2.05, -1.63]} scale={[2.65, 1.35, 0.15]} color={stone} roughness={0.55} />
       <Box position={[2.55, 2.3, -1.62]} scale={[2.95, 1.65, 0.15]} color={stone} roughness={0.55} />
-      <Box position={[0.75, 2.26, -1.55]} scale={[0.8, 1.45, 0.12]} color="#161e20" metalness={0.55} roughness={0.25} />
-      <Box position={[0.75, 2.52, -1.63]} scale={[0.5, 0.05, 0.03]} color="#d68a35" metalness={0.2} roughness={0.3} />
-      <Box position={[1.18, 2.26, -1.63]} scale={[0.06, 1.7, 0.04]} color="#d0d5d0" metalness={0.5} roughness={0.25} />
+      <Box position={[0.75, 2.26, -1.55]} scale={[0.8, 1.45, 0.12]} color="#204C72" metalness={0.55} roughness={0.25} />
+      <Box position={[0.75, 2.52, -1.63]} scale={[0.5, 0.05, 0.03]} color="#9DBACD" metalness={0.2} roughness={0.3} />
+      <Box position={[1.18, 2.26, -1.63]} scale={[0.06, 1.7, 0.04]} color="#F7F9FA" metalness={0.5} roughness={0.25} />
       <Box position={[2.2, 2.62, -1.58]} scale={[1.2, 0.06, 0.08]} color={lightWood} />
       <Box position={[-2.5, 2.66, -1.58]} scale={[1.55, 0.06, 0.08]} color={lightWood} />
     </group>
@@ -88,8 +91,8 @@ function KitchenModel() {
         <torusGeometry args={[0.22, 0.035, 10, 24, Math.PI]} />
         <meshStandardMaterial color={steel} metalness={0.8} roughness={0.18} />
       </mesh>
-      <Box position={[1.72, 2.22, -0.24]} scale={[0.68, 0.05, 0.62]} color="#202727" metalness={0.7} roughness={0.25} />
-      <Box position={[1.72, 2.28, -0.24]} scale={[0.12, 0.03, 0.12]} color="#dd8b37" metalness={0.15} roughness={0.3} />
+      <Box position={[1.72, 2.22, -0.24]} scale={[0.68, 0.05, 0.62]} color="#204C72" metalness={0.7} roughness={0.25} />
+      <Box position={[1.72, 2.28, -0.24]} scale={[0.12, 0.03, 0.12]} color="#9DBACD" metalness={0.15} roughness={0.3} />
       <Stool position={[-0.2, 0, 0.96]} />
       <Stool position={[0.75, 0, 1.03]} />
       <Stool position={[1.7, 0, 0.94]} />
@@ -104,31 +107,44 @@ function KitchenModel() {
 function KitchenScene() {
   return (
     <Canvas camera={{ position: [8.4, 5.7, 10.5], fov: 38 }} gl={{ antialias: true, alpha: true }}>
-      <ambientLight intensity={0.35} />
-      <directionalLight position={[3, 4, 4]} intensity={3.5} color="#f5eee3" />
-      <pointLight position={[-3, -1, 2]} intensity={18} distance={8} color="#e08f62" />
-      <pointLight position={[3, 1, -1]} intensity={12} distance={7} color="#7fb7b3" />
-      <KitchenModel />
-      <Sparkles count={100} scale={9} size={1.25} speed={0.18} color="#e08f62" opacity={2.42} />
-      <Environment preset="city" />
-      <OrbitControls autoRotate autoRotateSpeed={4.2} enablePan={false} enableZoom={false} target={[0, 0.1, 0]} />
+      <Suspense fallback={null}>
+        <ambientLight intensity={0.35} />
+        <directionalLight position={[3, 4, 4]} intensity={3.5} color="#F7F9FA" />
+        <pointLight position={[-3, -1, 2]} intensity={18} distance={8} color="#204C72" />
+        <pointLight position={[3, 1, -1]} intensity={12} distance={7} color="#9DBACD" />
+        <KitchenModel />
+        <Sparkles count={100} scale={9} size={1.25} speed={0.18} color="#204C72" opacity={2.42} />
+        <Environment preset="city" />
+        <OrbitControls autoRotate autoRotateSpeed={4.2} enablePan={false} enableZoom={false} target={[0, 0.1, 0]} />
+      </Suspense>
     </Canvas>
   );
 }
 
 export default function HomeShowcase() {
+  const webgl = useWebGL();
   return (
     <section className="showcase-section" id="showcase">
       <div className="showcase-background" aria-hidden="true" />
       <div className="showcase-heading">
-        <p className="section-kicker"><span>04</span> Interior coordination</p>
-        <h2>Design the room<br /><em>before the room.</em></h2>
-        <p>From cabinetry to circulation, every finish is resolved in the model before it reaches the site.</p>
+        <p className="section-kicker"><span>05</span> Interior Design</p>
+        <h2>Solutions</h2>
+        <p>At Draft BIM, we create beautiful and functional spaces tailored to your needs. Our team ensures each design reflects your style, enhancing your home’s comfort and functionality.</p>
         <div className="showcase-stat"><strong>Kitchen / 01</strong><span>Interactive material study</span></div>
       </div>
       <div className="showcase-canvas" aria-label="Interactive 3D kitchen interior" role="img">
-        <KitchenScene />
-        <span className="showcase-caption">Drag to inspect / Kitchen study 2026</span>  
+        {webgl === true && <KitchenScene />}
+        {webgl === false && (
+          <div className="webgl-fallback" aria-hidden="true">
+            <div className="wf-building">
+              <div className="wf-floor wf-floor-1" /><div className="wf-floor wf-floor-2" /><div className="wf-floor wf-floor-3" />
+              <div className="wf-tower" /><div className="wf-glass" />
+              <div className="wf-line wf-line-h" /><div className="wf-line wf-line-v" />
+            </div>
+            <p className="wf-label">Enable hardware acceleration in Chrome → Settings → System</p>
+          </div>
+        )}
+        <span className="showcase-caption">Drag to inspect / Kitchen study 2026</span>
       </div>
     </section>
   );
