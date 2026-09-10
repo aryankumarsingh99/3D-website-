@@ -93,7 +93,6 @@ export default function Home() {
               <div className="wf-tower" /><div className="wf-glass" />
               <div className="wf-line wf-line-h" /><div className="wf-line wf-line-v" />
             </div>
-            <p className="wf-label">Enable hardware acceleration in Chrome → Settings → System</p>
           </div>
         )}
         <div className="scene-label scene-label-bottom">Drag to rotate <span>+</span> explore the model</div>
